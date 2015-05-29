@@ -1,3 +1,4 @@
-#myCanvas   {
-                  
+body   {
+  background-image: url("/assets/stars.jpg");
+  height: 100%;                 
 }
