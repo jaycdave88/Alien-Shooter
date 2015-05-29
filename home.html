@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Space Shooter</title>
-        <link href="normalize.css" type="text/css" rel="stylesheet" />
-        <link href="game.css" type="text/css" rel="stylesheet" />
-        <script language="javascript" type="text/javascript" src="//code.createjs.com/createjs-2013.12.12.min.js" ></script>
-        <script language="javascript" type="text/javascript" src="fastclick.js"></script>
-        <script language="javascript" type="text/javascript" src="init.js" ></script>
-    </head>
-    <body>
+
+<head>
+    <title>Space Shooter</title>
+    <link href="normalize.css" type="text/css" rel="stylesheet" />
+    <link href="game.css" type="text/css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="//code.createjs.com/createjs-2013.12.12.min.js"></script>
+    <script language="javascript" type="text/javascript" src="fastclick.js"></script>
+    <script language="javascript" type="text/javascript" src="init.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
         <canvas id="myCanvas"></canvas>
-    </body>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a onclick="startGame();" class="button play" id="start">Start Game</a>
+                </li>
+                <li>
+                    <a onclick="javascript:history.go(0)" class="button credits" id="again">Try Again</a>
+                </li>
+            </ul>
+        </div>
+          <div class="info">
+            <p>Protect the Earth from invading aliens!</p>
+            <p>Shoot all the alien space ships in 60 seconds!</p>
+          </div>
+    </div>
+    <script>
+    $("#again").hide();
+    </script>
+</body>
+
+
 </html>

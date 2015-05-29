@@ -19,8 +19,7 @@ var gameTimer;
 var gameTime = 0;
 var timerText;
 
-window.onload = function()
-{
+function startGame(){
   
     var canvas = document.getElementById('myCanvas');
     context = canvas.getContext('2d');
@@ -47,6 +46,9 @@ window.onload = function()
     queue.load();
     gameTimer = setInterval(updateTime, 1000);
 
+$("#start").hide();
+$("#again").show();
+$(".info").hide();
 }
 
 function queueLoaded(event){
@@ -69,10 +71,10 @@ function queueLoaded(event){
     spriteSheet = new createjs.SpriteSheet({
         "images": [queue.getResult('alienSpriteSheet')],
         "frames": {"width": 100, "height": 115},
-        "animations": { "invade": [0,3] }
+        "animations": { "invade": [0] }
     });
 
-    batDeathSpriteSheet = new createjs.SpriteSheet({
+    notInUse = new createjs.SpriteSheet({
     	"images": [queue.getResult('alienDeath')],
     	"frames": {"width": 198, "height" : 148},
     	"animations": {"die": [0,5, false,1 ] }
@@ -90,7 +92,7 @@ function queueLoaded(event){
 function createEnemy()
 {
 	animation = new createjs.Sprite(spriteSheet, "invade");
-    animation.regX = 99;
+    animation.regX = 49;
     animation.regY = 58;
     animation.x = enemyXPos;
     animation.y = enemyYPos;
@@ -100,7 +102,7 @@ function createEnemy()
 
 function alienDeath()
 {
-  deathAnimation = new createjs.Sprite(batDeathSpriteSheet, "die");
+  deathAnimation = new createjs.Sprite(notInUse, "die");
   deathAnimation.regX = 99;
   deathAnimation.regY = 58;
   deathAnimation.x = enemyXPos;
@@ -155,7 +157,7 @@ function handleMouseDown(event)
     var distX = Math.abs(shotX - spriteX);
     var distY = Math.abs(shotY - spriteY);
 
-    if(distX < 30 && distY < 59 )
+    if(distX < 20 && distY < 29 )
     {
     	stage.removeChild(animation);
     	alienDeath();
@@ -194,3 +196,4 @@ function updateTime()
     createjs.Sound.play("tick");
 	}
 }
+

@@ -2,3 +2,34 @@ body   {
   background-image: url("/assets/stars.jpg");
   height: 100%;                 
 }
+.menu>ul{
+   list-style: none;
+}.menu>ul>li{
+  padding:5px;
+}
+.button {
+  display: block;
+  width: 150px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-color: #D3D3D3;
+  background-image: -webkit-linear-gradient(bottom, #D3D3D3 0%, #b3b3b3 100%);
+  background-image:         linear-gradient(to bottom, #D3D3D3 0%, #b3b3b3 100%);
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #b3b3b3;
+  background-image: -webkit-linear-gradient(bottom, #b3b3b3 0%, #D3D3D3 100%);
+  background-image:         linear-gradient(to bottom, #b3b3b3 0%, #D3D3D3 100%);
+}
+
+.info{
+  color: white;
+  font-size: 34px;
+  font-family: helvetica;
+}
