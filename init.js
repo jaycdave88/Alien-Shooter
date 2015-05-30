@@ -109,7 +109,7 @@ function queueLoaded(event) {
     createEnemy();
 
 
-    createjs.Ticker.setFPS(15);
+    createjs.Ticker.setFPS(25);
     createjs.Ticker.addEventListener('tick', stage);
     createjs.Ticker.addEventListener('tick', tickEvent);
 
@@ -199,7 +199,7 @@ function handleMouseDown(event) {
 
 function updateTime() {
     gameTime += 1;
-    if (gameTime > 3) {
+    if (gameTime > 60) {
         timerText.text = "Game Over";
         stage.removeChild(animation);
         stage.removeChild(crossHair);
