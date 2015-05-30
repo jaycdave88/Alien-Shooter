@@ -4,6 +4,7 @@
 <head>
     <title>Space Shooter</title>
     <link href="normalize.css" type="text/css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="game.css" type="text/css" rel="stylesheet" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script language="javascript" type="text/javascript" src="//code.createjs.com/createjs-2013.12.12.min.js"></script>
@@ -11,28 +12,35 @@
     <script language="javascript" type="text/javascript" src="init.js"></script>
 </head>
 
-<body>
+<body onload="$('#modal_target').modal('show');">
     <div class="wrapper">
         <canvas id="myCanvas"></canvas>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a onclick="startGame();" class="button play" id="start">Start Game</a>
-                </li>
-                <li>
-                    <a onclick="javascript:history.go(0)" class="button credits" id="again">Try Again</a>
-                </li>
-            </ul>
+        <div class="modal" id="modal_target" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" href="#">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="btn-wrapper">Alien Shooter</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="info">
+                            <p>Protect the Earth from invading aliens!</p>
+                        </div>
+                        <div class="menu">
+                            <div class="btn btn-success btn-lg start" onclick="startGame();" data-toggle="modal" data-target="#modal_target">Start Game</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <h6>Create by: Jay C. Dave</h6>
+                    </div>
+                </div>
+            </div>
         </div>
-          <div class="info">
-            <p>Protect the Earth from invading aliens!</p>
-            <p>Shoot all the alien space ships in 60 seconds!</p>
-          </div>
     </div>
+    <div class="btn btn-warning btn-lg" onclick="javascript:history.go(0)" class="button credits" id="again">Try Again</div>
     <script>
     $("#again").hide();
     </script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
-
 
 </html>
