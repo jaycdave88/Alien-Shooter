@@ -1,7 +1,12 @@
 body   {
-  background-image: url("/assets/stars.jpg");
-  height: 100%;                 
+ /* background-image: url("/assets/stars.jpg");*/
+  background-color: black;
+  height: 100%;          
 }
+
+/*.game-on {
+  cursor: url(assets/crosshair.png),auto;
+}*/
 .menu>ul{
    list-style: none;
 }.menu>ul>li{
@@ -28,8 +33,35 @@ body   {
   background-image:         linear-gradient(to bottom, #b3b3b3 0%, #D3D3D3 100%);
 }
 
-.info{
-  color: white;
-  font-size: 34px;
-  font-family: helvetica;
+a:focus{
+  color:white;
+  text-decoration: none;
+}
+a:hover{
+  color:white;
+  text-decoration: none;
+}
+.start{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+.modal-header, .modal-body {
+
+    background-color: #323232;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+     color:white; 
+     text-align: center; 
+ }
+ .modal-header{
+  color:red;
+ }
+ .modal-footer{
+  background-color: #323232;
+  color: #adadad;
+ }
+ .modal-backdrop.in {
+   background-color: black;
+   opacity: .99;
 }
